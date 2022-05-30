@@ -5,49 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    >
+    android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingBottom="30dp"
         android:text="@string/channels"
         android:textColor="#009688"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+       />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="73dp" />
 
     <LinearLayout
         android:id="@+id/channelsContainer"
-        android:layout_width="409dp"
-        android:layout_height="680dp"
-        android:layout_marginTop="2dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/channels"
         android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:padding="10dp"
-        >
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addChannelButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:clickable="true"
-            android:contentDescription="@string/add_channel"
-            android:focusable="true"
-            app:backgroundTint="@color/darkPurple"
-            app:srcCompat="@drawable/ic_baseline_add_24"
-            tools:ignore="ImageContrastCheck" />
-
-
+        app:layout_constraintTop_toTopOf="@+id/guideline">
 
         <SearchView
             android:layout_width="match_parent"
@@ -55,9 +47,6 @@
             android:background="@drawable/search_style"
             android:iconifiedByDefault="false"
             android:queryBackground="@android:color/transparent"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
 
             >
 
@@ -66,21 +55,40 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
             android:contentDescription="@string/list_channels"
-            android:scrollbars="none"
-
-
-            >
+            android:scrollbars="none">
 
             <LinearLayout
                 android:id="@+id/channelList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:layout_marginTop="@dimen/separator"
+                android:divider="@drawable/items_separation"
+                android:orientation="vertical"
+                android:showDividers="middle"
+
+                ></LinearLayout>
         </ScrollView>
 
     </LinearLayout>
 
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addChannelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="@string/add_channel"
+        android:focusable="true"
+        app:backgroundTint="@color/darkPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="1"
+        android:layout_marginEnd="@dimen/separator"
+        android:layout_marginBottom="@dimen/separator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        tools:ignore="ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

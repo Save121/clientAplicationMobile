@@ -3,10 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="30dp"
-    android:layout_marginTop="@dimen/pref_margin"
     android:background="@color/darkPurple"
-    android:layout_marginBottom="@dimen/pref_margin"
-
     >
 
     <TextView

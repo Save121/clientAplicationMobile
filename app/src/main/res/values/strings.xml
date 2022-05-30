@@ -3,4 +3,6 @@
     <string name="channels">Canales</string>
     <string name="add_channel">Agregar canal</string>
     <string name="list_channels">Lista de canales</string>
+    <string name="file_list">Lista de archivos</string>
+    <string name="add_new_file">Agregar nuevo archivo</string>
 </resources>

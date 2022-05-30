@@ -3,16 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ECD6FC"
-    android:orientation="vertical"
 
-    >
+    android:orientation="vertical">
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
+        android:id="@+id/channelName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add"
+
         />
+
+    <Button
+        android:id="@+id/createChannelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear" />
 
 </LinearLayout>
